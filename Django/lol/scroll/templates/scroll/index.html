@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Scroll
+        </title>
+        <style>
+            @keyframes delete{
+                0%{
+                    opacity: 1;
+                    margin: 20px;
+                    padding-bottom: 10px;
+                    padding-top: 10px;
+                }
+                100%{                    
+                    margin: 0px;
+                    padding-bottom: 0px;
+                    padding-top: 0px;
+                    opacity: 0;
+                }
+            }
+            .post{
+                background-color: rgb(178, 150, 204);
+                margin: 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                text-align: center;
+                animation-name: delete;
+                animation-fill-mode: forwards;
+                animation-duration: 1s;
+                animation-play-state: paused;
+            }
+            .hide{
+                float: right;
+                margin-right: 20px;
+            }
+        </style>
+        <script>
+            let counter = 1;
+            const quantity= 20;
+            
+            document.addEventListener("DOMContentLoaded", load());
+            
+            document.addEventListener('scroll', () => {
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight){
+                    load();
+                }
+            }); 
+            
+
+            function load(){    
+                const start = counter;
+                const end = start + quantity - 1;
+                counter = end + 1;
+                fetch(`/posts?start=${start}&end=${end}`)
+                .then(response => response.json())
+                .then(data => data.forEach(add_post))  
+            };
+
+            function add_post(content){
+                const post = document.createElement('div');
+                post.innerHTML = `${content} <button class= 'hide'>Hide</button>`;
+                post.className = 'post';
+
+                document.querySelector('#posts').append(post); 
+            };
+            
+            document.addEventListener('click', event =>{
+                const click = event.target;
+                if (click.className === "hide"){
+                    click.parentElement.style.animationPlayState = 'running';
+                    click.parentElement.addEventListener('animationend', () => {
+                        click.parentElement.remove();
+                    });
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div id='posts'>
+        </div>
+    </body>
+</html>
