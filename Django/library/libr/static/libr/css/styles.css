@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+body{
+    margin: 1.2em 0 0 0;
+    font-family: 'Nunito', sans-serif;
+    color:brown;
+}
+
+/* Navbar CSS*/
+
+a[id='navLogo'] img{
+    width: 100px;
+    height: 80px;
+}
+
+.form-control, .form-control:enabled, .form-control:focus, .form-control:focus-within, .form-control:focus-visible, .form-control:visited, .form-control:hover, .form-control:target, .form-control:active{
+    background-color: #d6bb92 !important;
+    color: rgb(136, 89, 28) !important;
+    border-color: burlywood !important;
+}
+
+.btn-success{
+    border-style: none;
+    background-color: brown;
+    color: rgb(2, 2, 1);
+}
+
+.btn-success:hover{
+    background-color:rgb(112, 22, 22);
+    color:white;
+    cursor: pointer;
+}
+
+.nav-item{
+    font-weight: bolder;
+    color: brown;
+    border: 2px solid brown;
+    border-radius: 0.7em;
+}
+
+/* END Navbar CSS*/
+
+.searchCovers, .indexCovers{
+    width: 220px;
+    height: 350px;
+}
+
+a[class=indexBooks], a[class=searchBooks]{
+    display: inline-block;
+    width:220px;
+    height:350px;
+    margin: 4em 1.5em 4em 1.5em;
+    transform: translateX(3em);
+}
+
+span[class=indexTitles], span[class=searchTitles]{
+    display: inline-block;
+    color:brown;
+    text-overflow: clip;
+    text-decoration: none;
+    width: 220px;
+    border-radius: 0.5em;
+    padding: 0.2em;
+    text-align: center;
+    background-color: rgba(246, 217, 172, 0.4);
+    transform: translate(-0.2em, 0.5em);
+}
+
+span[class=indexTitles]:hover, span[class=searchTitles]:hover{
+    text-decoration:underline;
+    font-weight: bold;
+}
+
+#r-form{
+    margin-left: 2rem;
+}
+
+.carousalCovers{
+    margin: auto;
+    width: 37%;
+    height: 700px;
+}
+
+/*Footer Start*/
+
+.footer-container{
+    padding: 1rem 0 1rem 0;
+    background-color:rgb(228, 191, 144);
+}
+
+footer{
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgb(228, 191, 144);
+    color:chocolate;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-heading{
+    display: flex;
+    flex-direction: column;
+    margin: 0 4rem 0rem 4rem;
+}
+
+.footer-heading h2{
+    color: brown;
+    font-weight: bolder;
+}
+
+.footer-heading a{
+    text-align: center;
+    text-decoration: none;
+    color: chocolate;
+}
+
+.footer-heading a:hover{
+    font-weight: bolder;
+    color:brown;
+    transition: 0.3s ease-out;
+}
+
+@media screen and (max-width: 660px){
+    .footer-3{
+        display: none;
+    }
+    .footer-heading{
+        margin: 0 2rem 2rem 2rem; 
+    }
+}
+
+@media screen and (max-width: 1070px){
+    .footer-heading{
+        margin: 0 2rem 2rem 2rem; 
+    }
+}
+
+/*Footer End*/
+
+
+
+/*
+header a[id=logo]{
+    margin: 1.8em 1.5em 0 1.1em;
+    color: rgb(212, 172, 120);
+    font-size: 2.5rem;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+header input[type="text"]{
+    margin-left: 70em;
+    border-style: none;
+    border-radius: 0.35em;
+    background-color: #d6bb92;
+    color: rgb(136, 89, 28);
+    width: 15em;
+    height: 2em;
+    transform: translateY(-2.7em);
+}
+
+header input[type="submit"]{
+    border-style: none;
+    border-radius: 0.3em;
+    width: 5em;
+    height:2em;
+    background-color: brown;
+    color: rgb(2, 2, 1);
+    transform: translateY(-2.7em);
+}
+
+header input[type="submit"]:hover{
+    background-color:rgb(112, 22, 22);
+    color:white;
+    cursor: pointer;
+}
+*/

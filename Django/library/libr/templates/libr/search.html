@@ -1,0 +1,13 @@
+{% extends "libr/layout.html" %}
+{% block body %}
+
+{% for book in books %}
+
+<a href="{% url 'book' book.id %}" class="searchBooks">
+    <img src={{book.cover}} class="searchCovers">
+    <span class='searchTitles'>{{book.title}}</span> 
+</a>
+
+{% endfor %}
+
+{% endblock %}

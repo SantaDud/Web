@@ -1,0 +1,16 @@
+{% extends "libr/layout.html" %}
+{% block body %}
+{% load static %}
+
+
+<link rel="stylesheet" href="{% static 'libr/css/book.css' %}">
+<img src={{book.cover}} class="bookCovers">
+<div class="bookContent">
+    <h1 class="Title">{{book.title}}</h1><br>
+    <div class="author"><span>Author:</span><br>{{book.author}}</div><br>
+    <div class="description"><span>Description:</span><br>{{book.description}}</div><br>
+    <p class="isbn"><span>ISBN:</span><br>{{book.ISBN}}</p><br>
+    <button class="download" >Download PDF</button>
+</div>
+
+{% endblock %}
